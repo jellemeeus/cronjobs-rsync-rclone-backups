@@ -33,13 +33,13 @@ CRONJOBS=/home/user/scripts/cronjobs
 
 # Copy to Mega user2@mail.com (50GB limit)
 40 18 * * * export DRIVE=mega_usr2; export FILES=all;"$CRONJOBS"/rclone.sh
-# Copy to Onedrive jelle.meeus@mail.com (5GB limit)
+# Copy to Onedrive user@mail.com (5GB limit)
 40 18 * * * export DRIVE=onedrive_jdotm; export FILES=critical;"$CRONJOBS"/rclone.sh
 
 # Copy to Onedrive user@mail.com (5GB limit)
 10 19  * * * export DRIVE=onedrive_usr; export FILES=critical;"$CRONJOBS"/rclone.sh
-# Copy to Mega soglahash@mail.com (20GB limit)
-10 19  * * *  export DRIVE=mega_soglahash; export FILES=critical;"$CRONJOBS"/rclone.sh
+# Copy to Mega user@mail.com (20GB limit)
+10 19  * * *  export DRIVE=mega_user; export FILES=critical;"$CRONJOBS"/rclone.sh
 
 # Copy to Mega user@mail.com cloud (20GB limit)
 20 19 * * * export DRIVE=mega_usr; export FILES=normal;"$CRONJOBS"/rclone.sh
