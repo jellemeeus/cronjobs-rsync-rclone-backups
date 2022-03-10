@@ -1,4 +1,4 @@
-# cronjobs_rsync_rclone_backups
+# cronjobs-rsync-rclone-backups
 Easy automated backups to local and remote drives with cronjobs, rsync and rclone
 
 We can specify which files to upload with filters (`*.txt`) and easily upload to multiple cloud drives with variable data cap limits
