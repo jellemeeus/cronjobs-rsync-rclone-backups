@@ -1,0 +1,11 @@
++ /.bashrc
++ /.bash_aliases
++ /.vimrc
++ /.ssh/config
++ /scripts/**
+- /Veracrypt/personal.veracrypt
+- /Veracrypt/temp.veracrypt
++ /Veracrypt/**
++ /Pictures/**
++ /Documents/**
+- *

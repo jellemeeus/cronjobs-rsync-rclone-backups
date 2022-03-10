@@ -1,0 +1,11 @@
+# Copy of filter_all.txt with '**' replaced by '***'
++ /.bashrc
++ /.bash_aliases
++ /.vimrc
++ /.ssh/config
++ /scripts/***
+- /Veracrypt/temp.veracrypt
++ /Veracrypt/***
++ /Pictures/***
++ /Documents/***
+- *
