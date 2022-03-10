@@ -1,0 +1,46 @@
+# Edit this file to introduce tasks to be run by cron.
+# 
+# Each task to run has to be defined through a single line
+# indicating with different fields when the task will be run
+# and what command to run for the task
+# 
+# To define the time you can provide concrete values for
+# minute (m), hour (h), day of month (dom), month (mon),
+# and day of week (dow) or use '*' in these fields (for 'any').
+# 
+# Notice that tasks will be started based on the cron's system
+# daemon's notion of time and timezones.
+# 
+# Output of the crontab jobs (including errors) is sent through
+# email to the user the crontab file belongs to (unless redirected).
+# 
+# For example, you can run a backup of all your user accounts
+# at 5 a.m every week with:
+# 0 5 * * 1 tar -zcf /var/backups/home.tgz /home/
+# 
+# For more information see the manual pages of crontab(5) and cron(8)
+# 
+CRONJOBS=/home/user/scripts/cronjobs
+
+# Backup crontab
+05 18 * * * crontab -l > "$CRONJOBS"/crontab.bak
+
+# Local daily and weekly backups
+18 18 * * * export DRIVE=Speed; export FREQUENCY=daily;"$CRONJOBS"/rsync.sh
+18 18 * * * export DRIVE=Shared; export FREQUENCY=daily;"$CRONJOBS"/rsync.sh
+35 18 * * FRI export DRIVE=Speed; export FREQUENCY=weekly;"$CRONJOBS"/rsync.sh
+35 18 * * FRI export DRIVE=Shared; export FREQUENCY=weekly;"$CRONJOBS"/rsync.sh
+
+# Copy to Mega user2@mail.com (50GB limit)
+40 18 * * * export DRIVE=mega_usr2; export FILES=all;"$CRONJOBS"/rclone.sh
+# Copy to Onedrive jelle.meeus@mail.com (5GB limit)
+40 18 * * * export DRIVE=onedrive_jdotm; export FILES=critical;"$CRONJOBS"/rclone.sh
+
+# Copy to Onedrive user@mail.com (5GB limit)
+10 19  * * * export DRIVE=onedrive_usr; export FILES=critical;"$CRONJOBS"/rclone.sh
+# Copy to Mega soglahash@mail.com (20GB limit)
+10 19  * * *  export DRIVE=mega_soglahash; export FILES=critical;"$CRONJOBS"/rclone.sh
+
+# Copy to Mega user@mail.com cloud (20GB limit)
+20 19 * * * export DRIVE=mega_usr; export FILES=normal;"$CRONJOBS"/rclone.sh
+

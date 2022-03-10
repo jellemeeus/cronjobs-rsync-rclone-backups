@@ -5,7 +5,7 @@ import json
 
 files = sys.argv[1:]
 
-with open("regex_sub.json", "r") as f:
+with open('regex_sub.json', 'r') as f:
     regex_sub = json.load(f)
     print(regex_sub)
 
@@ -17,6 +17,6 @@ for file in files:
             for regex,sub in regex_sub.items():
                 line = re.sub(regex, sub, line)
             content += line
-    with open('anon'+file, 'w') as f:
+    with open(file, 'w') as f:
         f.write(content)
-        print('processed: anon'+file)
+        print('processed: '+file)
