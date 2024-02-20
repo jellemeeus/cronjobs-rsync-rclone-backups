@@ -38,7 +38,7 @@ e.g `filter_{FILES}.txt`
 
 ## Requirements
 
-* Crontab (tested on Ubuntu 20.04)
+* Crontab
 * rsync
 * [Rclone](https://rclone.org/)
 
