@@ -78,6 +78,9 @@ We can call `rsync.sh` and fill in Drive and Files (filter)
 
 `export DRIVE=user_mega; export FILES=critical;"$CRONJOBS"/rclone.sh`
 
+Refreshing tokens:
+Needed for onedrive. `rclone config` Select onedrive -> have token (y/n) --y--> opens browser for sign in
+
 ### What to backup? Defining filters
 Filters for rclone `filter_critical.txt` defined as `filter_{FILES}.txt`
 ```
